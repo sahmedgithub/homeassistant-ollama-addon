@@ -1,4 +1,4 @@
-# Ollama Addon for Home Assistant
+# Ollama Addon for Home Assistant HOME
 
 Please note that this addon runs with CPU acceleration or experimental Nvidia GPU Support (please report if it works for you!). For ROCm the support is still pending.
 
