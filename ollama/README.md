@@ -4,7 +4,7 @@ Please note that this addon runs with CPU acceleration or experimental Nvidia GP
 
 ## Model Directory
 
-All downloaded models are stored `/share/ollama` by default. For historic reasons you can also configure it for `/config/ollama`. Please make sure that you have sufficient space available.
+All downloaded models are stored `/share/ollama` by default. For historic reasons you can also configure it for `/config/ollama`. Please make sure that you have sufficient space available. You can choose `/data/ollama` to keep your backups small cause this path is excluded from the addon backup.
 
 ## Ollama Integration
 
@@ -17,6 +17,21 @@ Use the following data:
 - URL: `http://76e18fb5-ollama:11434`
 
 If you want to change the model, delete the integration (not the addon!) and restart the process for the configuration of the integration.
+
+## Ollama Cloud Models
+
+Ollama supports cloud-hosted models that run on Ollama's infrastructure, useful for large models that don't fit on a local GPU.
+
+You have two possibilities for authentication:
+
+- Public-Private-Key Authentication:
+  - Look at the logs of this addon where the key is displayed and add this key to your [ollama account as a device key](https://ollama.com/settings/keys).
+  - Locally, the cloud credentials are stored in `~/.ollama/` and persisted to `/data/.ollama/` across addon restarts (via the `HOME` option).
+- API Key:
+  - Create an API key at [ollama.com/settings/keys](https://ollama.com/settings/keys)
+  - Set the `OLLAMA_API_KEY` option in the addon configuration
+
+Read more at the [Ollama Cloud documentation](https://docs.ollama.com/cloud).
 
 ## Note on the UI Link
 
